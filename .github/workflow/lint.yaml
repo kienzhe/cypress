@@ -1,0 +1,12 @@
+name: Run Unit Tests and Lint Files
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout and lint
+        uses: actions/checkout@v3
+      - run: |
+              npm ci
+              npm run build
+              npm run lint
